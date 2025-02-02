@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 70th Birthday, Mom!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa 0%, #ffd1dc 100%);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            padding: 1rem;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            animation: fadeIn 1.5s ease-in;
+            margin-bottom: 2rem;
+        }
+
+        .image-container {
+            width: 100%;
+        }
+
+        .birthday-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            display: block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #ff69b4;
+            font-size: 2rem;
+            margin: 1rem 0;
+            animation: slideDown 1s ease-out;
+        }
+
+        .age {
+            font-size: 3.5rem;
+            color: #ff69b4;
+            margin: 0.5rem 0;
+            animation: pulse 2s infinite;
+        }
+
+        .message {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            color: #666;
+            margin: 1rem 0;
+        }
+
+        .message p {
+            margin: 0.8rem 0;
+        }
+
+        .message.left {
+            text-align: left;
+        }
+
+        .heart {
+            color: #ff69b4;
+            font-size: 2rem;
+            animation: beat 1s infinite;
+            margin: 1rem 0;
+        }
+
+        .checkbox-container {
+            margin: 2rem 0 1rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .checkbox-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .checkbox-wrapper input[type="checkbox"] {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+        }
+
+        .checkbox-wrapper label {
+            font-size: 1.1rem;
+            color: #666;
+            cursor: pointer;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes beat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Desktop styles */
+        @media (min-width: 768px) {
+            .container {
+                max-width: 600px;
+                padding: 2rem;
+            }
+
+            .card {
+                padding: 2rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .message {
+                font-size: 1.2rem;
+            }
+        }
+        .confetti-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            display: none;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            animation: confettiFall linear forwards;
+        }
+
+        .confetti.square {
+            width: 12px;
+            height: 12px;
+            background: var(--color);
+            transform: rotate(45deg);
+        }
+
+        .confetti.circle {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--color);
+        }
+
+        .confetti.strip {
+            width: 20px;
+            height: 8px;
+            background: var(--color);
+        }
+
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-10vh) rotate(0deg);
+                opacity: 1;
+            }
+            25% {
+                transform: translateY(25vh) rotate(180deg) translateX(20px);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(50vh) rotate(360deg) translateX(-20px);
+                opacity: 1;
+            }
+            75% {
+                transform: translateY(75vh) rotate(540deg) translateX(20px);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="confetti-container" id="confettiContainer"></div>
+    <div class="container">
+        <div class="card">
+            <h1>Happy Birthday!</h1>
+            <div class="age">70</div>
+            <div class="message">
+                <p>Ich bin unendlich dankbar für deine bedingungslose Liebe und Unterstützung.</p>
+                <p>Ohne deine unermüdliche Bereitschaft, auch und gerade in schweren Zeiten Alles zu geben, wären wir heute nicht da, wo wir jetzt sind, und dafür danken wir dir von ganzem Herzen.</p>
+                <p>Ich bin froh, dass unsere Kinder die Chance haben, mit so einer großartigen Oma aufzuwachsen - manch einer würde sagen beste Oma auf der Welt.</p>
+            </div>
+            <div class="heart">❤️</div>
+            <div class="message left">
+                <p>Wir möchten dich gerne einladen, mit uns im Opel am 26.04. nach München zu düsen.</p>
+                <p>Der Plan ist: früh los, einen kleinen Snack zur Mitagszeit und dann bissl rumglotzen.</p>
+                <p>Danach trennen wir uns auf für ein paar Stunden, denn es geht ins:</p>
+                <div class="image-container">
+                    <img 
+                    class="birthday-image" 
+                    src="tickets.png" 
+                    alt="Happy Birthday Mom"
+                    loading="lazy"
+                    >
+                </div>
+                <p>Nach der Vorstellung werden wir uns wieder zusammentun und dann ein Restaurant anpeilen zum gemütlichen Abendessen.</p>
+                <p>Und dann bleibt nur noch die Heimreise. 🙂</p>
+                <p>Ich denke es wird insgesamt von etwa 8 bis 22 Uhr dauern.</p>
+                <p>Also bleibt nur eins zu klären. Magst du mitkommen?</p>
+                <div class="checkbox-container">
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="ja" name="antwort">
+                        <label for="ja">Ja</label>
+                    </div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="nein" name="antwort">
+                        <label for="nein">Nein</label>
+                    </div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="vielleicht" name="antwort">
+                        <label for="vielleicht">Vielleicht</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const jaCheckbox = document.getElementById('ja');
+        const confettiContainer = document.getElementById('confettiContainer');
+        let isAnimating = false;
+
+        const colors = [
+            '#FF69B4', // Pink
+            '#FFD700', // Gold
+            '#FF4500', // Orange Red
+            '#00CED1', // Dark Turquoise
+            '#9370DB', // Medium Purple
+            '#32CD32', // Lime Green
+            '#FF1493', // Deep Pink
+            '#4169E1', // Royal Blue
+            '#FFB6C1'  // Light Pink
+        ];
+
+        const shapes = ['square', 'circle', 'strip'];
+
+        function createConfetti() {
+            const confetti = document.createElement('div');
+            confetti.className = `confetti ${shapes[Math.floor(Math.random() * shapes.length)]}`;
+            
+            // Random position, size, and animation duration
+            const left = Math.random() * 100;
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            const duration = (Math.random() * 2 + 2); // 2-4 seconds
+            
+            confetti.style.left = left + 'vw';
+            confetti.style.setProperty('--color', color);
+            confetti.style.animationDuration = duration + 's';
+            
+            // Random starting rotation
+            confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+            
+            return confetti;
+        }
+
+        function startConfettiAnimation() {
+            if (isAnimating) return;
+            
+            isAnimating = true;
+            confettiContainer.style.display = 'block';
+            
+            // Create multiple confetti pieces
+            const particleCount = 150; // Increased count for more impact
+            let particlesCreated = 0;
+            
+            const createParticle = () => {
+                if (particlesCreated >= particleCount) {
+                    setTimeout(() => {
+                        confettiContainer.style.display = 'none';
+                        confettiContainer.innerHTML = '';
+                        isAnimating = false;
+                    }, 4000);
+                    return;
+                }
+                
+                const confetti = createConfetti();
+                confettiContainer.appendChild(confetti);
+                
+                // Remove particle after animation
+                confetti.addEventListener('animationend', () => {
+                    confetti.remove();
+                });
+                
+                particlesCreated++;
+                setTimeout(createParticle, 30); // Faster creation for more burst effect
+            };
+            
+            createParticle();
+        }
+
+        jaCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                startConfettiAnimation();
+                
+                // Uncheck other checkboxes
+                document.getElementById('nein').checked = false;
+                document.getElementById('vielleicht').checked = false;
+            }
+        });
+
+        // Make checkboxes mutually exclusive
+        document.querySelectorAll('input[name="antwort"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    document.querySelectorAll('input[name="antwort"]')
+                        .forEach(cb => {
+                            if (cb !== this) cb.checked = false;
+                        });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
